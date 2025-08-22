@@ -23,9 +23,13 @@ function getComputerChoice() {
 
 function getPlayerChoice() {
    input = prompt("Rock, Paper, or Scissors?").toLowerCase();
-   if (input !== ("rock" || "paper" || "scissors")) {
+   if (input !== "rock" && input !== "paper" && input !== "scissors") {
     alert("Choose your throw!");
     getPlayerChoice();
+   }
+   else {
+    alert("You threw " + input + ".");
+    console.log("You threw " + input + ".");
    }
    return input;
 }
@@ -33,19 +37,16 @@ function getPlayerChoice() {
 function playRound(playerChoice, computerChoice) {
 
     if (computerChoice === playerChoice) {
-        console.log("Tie");
         alert("Tie.");
         return ("tie");
     }
     else if ((computerChoice === "rock" && playerChoice === "paper") || 
     (computerChoice === "paper" && playerChoice === "scissors") || 
     (computerChoice === "scissors" && playerChoice === "rock")) {
-        console.log("Win");
         alert("Win!");
         return ("win");
     }
     else {
-        console.log("Loss");
         alert("Loss.");
         return ("loss");
     }
@@ -84,6 +85,8 @@ function playGame() {
     console.log("Sorry, you lose.");
    }
 }
+
+
 
 playGame();
 
