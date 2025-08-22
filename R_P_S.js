@@ -1,11 +1,13 @@
 
 
 function getComputerChoice() {
-    let randomNumber = Math.random() * 1000;
-    if (randomNumber > 0 && randomNumber < 333) {
+    min = Math.ceil(1);
+    max = Math.floor(4);
+    randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    if (randomNumber === 1) {
         return ("rock");
     }
-    else if (randomNumber > 333 && randomNumber < 666) {
+    else if (randomNumber === 2) {
         return ("paper");
     }
     else {
@@ -14,7 +16,11 @@ function getComputerChoice() {
 }
 
 function getPlayerChoice() {
-   input = prompt().toLowerCase();
+   input = prompt("Rock, Paper, or Scissors?").toLowerCase();
+   if (input !== ("rock" || "paper" || "scissors")) {
+    alert("Choose your throw!");
+    getPlayerChoice();
+   }
    return input;
 }
 
@@ -55,7 +61,18 @@ function playGame() {
         }
     }
    console.log(playerScore + " " + computerScore + " " + tieScore);
+   if (playerScore === computerScore) {
+    console.log("You tied.")
+   }
+   else if (playerScore > computerScore) {
+    console.log("Congrats! You won!")
+   }
+   else {
+    console.log("Sorry, you lose.")
+   }
 }
+
+playGame();
 
 
 
