@@ -5,12 +5,18 @@ function getComputerChoice() {
     max = Math.floor(4);
     randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
     if (randomNumber === 1) {
+        alert("The bot threw rock!");
+        console.log("The bot threw rock!");
         return ("rock");
     }
     else if (randomNumber === 2) {
+        alert("The bot threw paper!");
+        console.log("The bot threw paper!");
         return ("paper");
     }
     else {
+        alert("The bot threw scissors!");
+        console.log("The bot threw scissors!");
         return ("scissors");
     }
 }
@@ -27,18 +33,21 @@ function getPlayerChoice() {
 function playRound(playerChoice, computerChoice) {
 
     if (computerChoice === playerChoice) {
-        return ("tie");
         console.log("Tie");
+        alert("Tie.");
+        return ("tie");
     }
     else if ((computerChoice === "rock" && playerChoice === "paper") || 
     (computerChoice === "paper" && playerChoice === "scissors") || 
     (computerChoice === "scissors" && playerChoice === "rock")) {
-        return ("win");
         console.log("Win");
+        alert("Win!");
+        return ("win");
     }
     else {
-        return ("loss");
         console.log("Loss");
+        alert("Loss.");
+        return ("loss");
     }
     
 }
@@ -60,15 +69,19 @@ function playGame() {
             computerScore++;
         }
     }
+    alert("Your score is " + playerScore + " to " + computerScore + " with " + tieScore + " ties.")
    console.log(playerScore + " " + computerScore + " " + tieScore);
    if (playerScore === computerScore) {
-    console.log("You tied.")
+    alert("You tied.");
+    console.log("You tied.");
    }
    else if (playerScore > computerScore) {
-    console.log("Congrats! You won!")
+    alert("Congrats! You won!");
+    console.log("Congrats! You won!");
    }
    else {
-    console.log("Sorry, you lose.")
+    alert("Sorry, you lose.");
+    console.log("Sorry, you lose.");
    }
 }
 
