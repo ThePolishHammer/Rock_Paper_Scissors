@@ -23,11 +23,12 @@ function getComputerChoice() {
 
 function getPlayerChoice() {
    input = prompt("Rock, Paper, or Scissors?");
-   lowerCaseInput = input.toLowerCase();
-   if (lowerCaseInput === "") {
+   if (input === "" || input === null) {
     alert("Type something!")
     getPlayerChoice();
    }
+
+   lowerCaseInput = input.toLowerCase();
    if (lowerCaseInput !== "rock" && lowerCaseInput !== "paper" && lowerCaseInput !== "scissors") {
     alert("Choose your throw!");
     getPlayerChoice();
